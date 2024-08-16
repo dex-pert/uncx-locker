@@ -62,6 +62,10 @@ module.exports = {
     confluxTestnet: {
       url: `https://evmtestnet.confluxrpc.com`,
       accounts: ["8dbc9d7b924b00532e6fc1295fd120886d3d3576ef9ac9de78335de33c28b095"]
+    },
+    manta_sepolia: {
+      url: "https://pacific-rpc.sepolia-testnet.manta.network/http",
+      accounts: ["248c37bcdde0b8df03f14bba40c142b7340ce0d97e515ccd241169e63dcb7c6a"]
     }
   },
   etherscan: {
@@ -70,7 +74,8 @@ module.exports = {
       sepolia: 'QEAE2M96IB94MVPUN7ESQEBNI416F1EWRR',
       bitlayertestnet: "1234",
       bitlayer:"123",
-      ire: "ire"
+      ire: "ire",
+      manta_sepolia: "whatever"
     },
     customChains: [
       {
@@ -96,8 +101,15 @@ module.exports = {
           apiURL: "https://contract.evm.scan.qa.5ire.network/5ire/verify",
           browserURL: "https://scan.qa.5ire.network",
         }
+      },
+      {
+        network: "manta_sepolia",
+        chainId: 3441006,
+        urls: {
+          apiURL: "https://manta-sepolia.explorer.caldera.xyz/api",
+          browserURL: "https://pacific-explorer.sepolia-testnet.manta.network",
+        } 
       }
-
     ]
   }
 };

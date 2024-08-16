@@ -7,19 +7,21 @@
 const hre = require("hardhat");
 
 async function main() {
+  const factoryAddreess = "0x016B728C91CbA3695BE807C8d5eACC3c491B2096";
+  // const uniswapV2Locker = await hre.ethers.deployContract("UniswapV2Locker", [factoryAddreess]);
+  // await uniswapV2Locker.waitForDeployment();
 
-  const uniswapV2Locker = await hre.ethers.deployContract("UniswapV2Locker", ["0xce71f5957f481a77161f368ad6dfc61d694cf171"]);
+  // console.log(
+  //   `deployed to ${uniswapV2Locker.target}`
+  // );
 
-  await uniswapV2Locker.waitForDeployment();
-
-  console.log(
-    `deployed to ${uniswapV2Locker.target}`
-  );
+  const deployAddress = "0x7aa304e9175B634B9949135D828053335Ed78276";
 
   await hre.run("verify:verify", {
-    address: uniswapV2Locker.target,
+    // address: uniswapV2Locker.target,
+    address: deployAddress,
     constructorArguments: [
-      "0xce71f5957f481a77161f368ad6dfc61d694cf171",
+      factoryAddreess,
     ],
   });
 }
